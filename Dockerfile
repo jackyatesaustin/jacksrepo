@@ -4,11 +4,9 @@ FROM python:2.7-slim
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-#the python and requiremt file get copied by this command
+# Copy cur dir contents (app.py, req.txt) into the container at /app
 COPY . /app
 
-# Install any needed packages specified in requirements.txt
 # installs the calls made by requirements (flask, Redis)
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
